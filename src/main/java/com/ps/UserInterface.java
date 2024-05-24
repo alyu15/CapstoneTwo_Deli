@@ -52,6 +52,7 @@ public class UserInterface {
 
             switch(newOrderMenuInput) {
                 case "1":
+                    CreateSandwich.handleNewSandwich();
                     break;
 
                 case "2":
