@@ -78,6 +78,7 @@ public class Main {
             // Maybe have a folder just for receipts
         // At most maybe 5 classes
             // 1 should be an interface class
+        UserInterface.display();
 
     }
 }
