@@ -3,7 +3,10 @@ package com.ps;
 public class Sides extends Product{
 
     private String name;
-    public Sides () {};
+
+    public Sides () {
+
+    };
 
     public Sides(String name) {
         this.name = name;

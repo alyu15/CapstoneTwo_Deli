@@ -1,5 +1,6 @@
 package com.ps;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -118,17 +119,17 @@ public class UserInterface {
 
             switch (drinkSizeInput) {
                 case "1":
-                    drink.setSize("small");
+                    drink.setSize("Small");
                     drink.setPrice(2.0);
                     break;
 
                 case "2":
-                    drink.setSize("medium");
+                    drink.setSize("Medium");
                     drink.setPrice(2.5);
                     break;
 
                 case "3":
-                    drink.setSize("large");
+                    drink.setSize("Large");
                     drink.setPrice(3.0);
                     break;
 

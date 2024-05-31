@@ -1,0 +1,17 @@
+Date: 05-30-2024 11:59:12
+
+Sandwich Bread Type: White
+Sandwich Size: 4"
+Premium Toppings: Ham
+Extra Meat: No
+Sandwich Cheese: Swiss
+Extra Cheese: Yes
+Regular Toppings: [lettuce]
+Sauces: [Ranch], Toasted: Yes
+
+Drink Flavor: Snapple
+Drink Size: Medium
+
+Chips: Vickies
+
+Total Price: $11.55

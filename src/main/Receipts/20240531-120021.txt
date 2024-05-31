@@ -1,0 +1,14 @@
+Date: 05-31-2024 12:00:21
+
+Sandwich Bread Type: Rye
+Sandwich Size: 12"
+Premium Toppings: Bacon
+Extra Meat: No
+Sandwich Cheese: Provolone
+Extra Cheese: No
+Regular Toppings: [Lettuce]
+Sauces: [Ketchup], Toasted: Yes
+
+Chips: Northies
+
+Total Price: $15.25

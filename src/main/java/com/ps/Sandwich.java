@@ -7,23 +7,27 @@ public class Sandwich extends Product{
     private String breadSize;
     private String breadType;
     private String premiumToppings;
-    private boolean extraMeat = false;
+    private boolean extraMeat;
     private String cheese;
-    private boolean extraCheese = false;
+    private boolean extraCheese;
     private ArrayList<String> regularToppings;
     private ArrayList<String> sauces;
-    private boolean isToasted = false;
+    private boolean isToasted;
 
     public Sandwich(){};
 
-    public Sandwich(String breadSize, String breadType, String premiumToppings,
-                    String cheese, ArrayList<String> regularToppings, ArrayList<String> sauces) {
+    public Sandwich(String breadSize, String breadType, String premiumToppings, boolean extraMeat, String cheese,
+                    boolean extraCheese, ArrayList<String> regularToppings, ArrayList<String> sauces, boolean isToasted) {
+
         this.breadSize = breadSize;
         this.breadType = breadType;
         this.premiumToppings = premiumToppings;
+        this.extraMeat = extraMeat;
         this.cheese = cheese;
+        this.extraCheese = extraCheese;
         this.regularToppings = regularToppings;
         this.sauces = sauces;
+        this.isToasted = isToasted;
     }
 
     public String getBreadSize() {
@@ -49,7 +53,6 @@ public class Sandwich extends Product{
     public void setPremiumToppings(String premiumToppings) {
         this.premiumToppings = premiumToppings;
     }
-
 
     public boolean isExtraMeat() {
         return extraMeat;
@@ -151,13 +154,13 @@ public class Sandwich extends Product{
         return "Sandwich{" +
                 "breadSize='" + breadSize + '\'' +
                 ", breadType='" + breadType + '\'' +
-                ", premiumToppings=" + premiumToppings +
-                ", extraMeat=" + extraMeat +
+                ", premiumToppings='" + premiumToppings + '\'' +
+                ", extraMeat=" + (extraMeat ? "Yes" : "No") +
                 ", cheese='" + cheese + '\'' +
-                ", extraCheese=" + extraCheese +
+                ", extraCheese=" + (extraCheese ? "Yes" : "No") +
                 ", regularToppings=" + regularToppings +
                 ", sauces=" + sauces +
-                ", isToasted=" + isToasted +
+                ", isToasted=" + (isToasted ? "Yes" : "No") +
                 '}';
     }
 }

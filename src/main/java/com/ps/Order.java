@@ -9,7 +9,7 @@ public class Order {
     private List<Drink> drinks;
     private List<Chip> chips;
     private List<Sides> sides;
-    private double price;
+
 
     public Order() {
         this.sandwiches = new ArrayList<>();
@@ -17,6 +17,7 @@ public class Order {
         this.chips = new ArrayList<>();
         this.sides = new ArrayList<>();
     }
+
 
     public void addSandwich(Sandwich sandwich) {
         this.sandwiches.add(sandwich);
@@ -52,6 +53,38 @@ public class Order {
             }
         }
         return orderTotal;
+    }
+
+    public List<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public void setSandwiches(List<Sandwich> sandwiches) {
+        this.sandwiches = sandwiches;
+    }
+
+    public List<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public void setDrinks(List<Drink> drinks) {
+        this.drinks = drinks;
+    }
+
+    public List<Chip> getChips() {
+        return chips;
+    }
+
+    public void setChips(List<Chip> chips) {
+        this.chips = chips;
+    }
+
+    public List<Sides> getSides() {
+        return sides;
+    }
+
+    public void setSides(List<Sides> sides) {
+        this.sides = sides;
     }
 
     @Override

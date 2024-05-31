@@ -1,0 +1,17 @@
+Date: 05-30-2024 11:55:33
+
+Sandwich Bread Type: White
+Sandwich Size: 4"
+Premium Toppings: Steak
+Extra Meat: No
+Sandwich Cheese: Provolone
+Extra Cheese: Yes
+Regular Toppings: [lettuce]
+Sauces: [mayo], Toasted: Yes
+
+Drink Flavor: Sproot
+Drink Size: Medium
+
+Chips: Funyons
+
+Total Price: $11.55
