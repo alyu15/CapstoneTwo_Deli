@@ -30,7 +30,7 @@ public class Chip extends Product {
     @Override
     public String toString() {
         return "Chips" +
-                "\n==========================" +
+                "\n==========================================\n" +
                 "Brand Name = '" + brandName + '\n';
     }
 }

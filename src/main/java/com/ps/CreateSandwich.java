@@ -71,8 +71,8 @@ public class CreateSandwich {
 
     public static void handleSandwichSize(Sandwich newSandwich) {
 
-        System.out.println("Please select what size of sandwich you would like:");
-        System.out.println("(1) 4\"\n(2) 8\"\n(3) 12\"");
+        System.out.println("\nPlease select what size of sandwich you would like:");
+        System.out.println("\n(1) 4\"\n(2) 8\"\n(3) 12\"");
         String sandwichSizeInput;
         boolean running = true;
         while(running){
@@ -101,8 +101,8 @@ public class CreateSandwich {
 
     public static void handleSandwichType(Sandwich newSandwich){
 
-        System.out.println("Please select the type of bread you would like:");
-        System.out.println("(1) White\n(2) Wheat\n(3) Rye\n(4) Wrap");
+        System.out.println("\nPlease select the type of bread you would like:");
+        System.out.println("\n(1) White\n(2) Wheat\n(3) Rye\n(4) Wrap");
         String sandwichBreadInput;
 
         boolean running = true;
@@ -138,13 +138,13 @@ public class CreateSandwich {
 
 
     public static void handleRegularToppings(Sandwich newSandwich) {
-        System.out.println("Regular Toppings:");
-        System.out.println("~ Lettuce\n~ Peppers\n~ Onions\n~ Tomatoes\n~ Jalepenos\n~ Cucumbers\n~ Pickles\n~ Guacamole\n~ Mushrooms");
+        System.out.println("\nRegular Toppings:");
+        System.out.println("\n~ Lettuce\n~ Peppers\n~ Onions\n~ Tomatoes\n~ Jalepenos\n~ Cucumbers\n~ Pickles\n~ Guacamole\n~ Mushrooms");
 
         ArrayList<String> toppingsList = new ArrayList <>();
 
         while (true) {
-            System.out.println("Please enter in the toppings you would like or \"done\" if you are finished");
+            System.out.println("\nPlease enter in the toppings you would like or \"done\" if you are finished");
             String toppingsInput = scanner.next().trim();
 
             if (!toppingsInput.equalsIgnoreCase("done")) {
@@ -158,8 +158,8 @@ public class CreateSandwich {
 
     public static void handlePremiumToppings(Sandwich newSandwich) {
 
-        System.out.println("Please select the type of meat you would like:");
-        System.out.println("(1) Steak (2) Ham (3) Salami (4) Roast Beef (5) Chicken (6) Bacon" );
+        System.out.println("\nPlease select the type of meat you would like:");
+        System.out.println("\n(1) Steak (2) Ham (3) Salami (4) Roast Beef (5) Chicken (6) Bacon" );
         String sandwichMeatInput;
         boolean running = true;
         while(running){
@@ -202,8 +202,8 @@ public class CreateSandwich {
     }
 
     public static void handleSandwichCheese(Sandwich newSandwich) {
-        System.out.println("Please select the type of cheese you would like:");
-        System.out.println("(1) American (2) Provolone (3) Cheddar (4) Swiss");
+        System.out.println("\nPlease select the type of cheese you would like:");
+        System.out.println("\n(1) American (2) Provolone (3) Cheddar (4) Swiss");
         String sandwichCheeseInput;
         boolean running = true;
         while(running){
@@ -239,12 +239,12 @@ public class CreateSandwich {
 
     public static void handleSandwichSauce(Sandwich newSandwich) {
 
-        System.out.println("Sauces:");
-        System.out.println("~ Mayo\n~ Mustard\n~ Ketchup\n~ Ranch\n~ Thousand Island\n~ Vinaigrette");
+        System.out.println("\nSauces:");
+        System.out.println("\n~ Mayo\n~ Mustard\n~ Ketchup\n~ Ranch\n~ Thousand Island\n~ Vinaigrette");
         ArrayList<String> sauceList = new ArrayList <>();
 
         while(true) {
-            System.out.println("Please enter in the sauces you would like or \"done\" if you are finished");
+            System.out.println("\nPlease enter in the sauces you would like or \"done\" if you are finished");
             String sauceInput = scanner.next().trim();
 
             if(!sauceInput.equalsIgnoreCase("done")) {
@@ -261,26 +261,28 @@ public class CreateSandwich {
 
     public static void handleSandwichExtras(Sandwich newSandwich) {
 
-        System.out.println("Would you like extra meat on your sandwich for an additional cost?(yes/no)");
+        System.out.println("\nWould you like extra meat on your sandwich for an additional cost?(yes/no)");
         String extraMeatInput = scanner.next().trim();
 
         if(extraMeatInput.equalsIgnoreCase("yes")) {
             newSandwich.setExtraMeat(true);
         }
 
-        System.out.println("Would you like extra cheese on your sandwich for an additional cost?(yes/no)");
+        System.out.println("\nWould you like extra cheese on your sandwich for an additional cost?(yes/no)");
         String extraCheeseInput = scanner.next().trim();
 
         if(extraCheeseInput.equalsIgnoreCase("yes")) {
             newSandwich.setExtraCheese(true);
         }
 
-        System.out.println("Would you like your sandwich toasted?(yes/no)");
+        System.out.println("\nWould you like your sandwich toasted?(yes/no)");
         String toastedInput = scanner.next().trim();
 
         if(toastedInput.equalsIgnoreCase("yes")) {
             newSandwich.setToasted(true);
         }
+
+        System.out.println("\nSandwich successfully added to Order!\n");
 
     }
 

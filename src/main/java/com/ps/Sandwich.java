@@ -152,7 +152,7 @@ public class Sandwich extends Product{
     @Override
     public String toString() {
         return "Sandwich" +
-                "\n=================================" +
+                "\n==========================================\n" +
                 "\nBread Size = '" + breadSize + '\'' +
                 ", \nBread Type = '" + breadType + '\'' +
                 ",\nPremium Toppings = '" + premiumToppings + '\'' +

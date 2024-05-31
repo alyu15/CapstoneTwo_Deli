@@ -1,0 +1,15 @@
+Date: 05-31-2024 01:15:31
+
+Sandwich Size: 4"
+Sandwich Bread Type: White
+Premium Toppings: Steak
+Extra Meat: Yes
+Sandwich Cheese: American
+Extra Cheese: Yes
+Regular Toppings: [Lettuce]
+Sauces: [Mayo], Toasted: Yes
+
+Drink Flavor: Sproot
+Drink Size: Medium
+
+Total Price: $10.55

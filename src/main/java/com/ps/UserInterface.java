@@ -13,15 +13,15 @@ public class UserInterface {
     }
     public static void display() {
 
-        System.out.println("Welcome to Deli's Delicious Deli Sandwiches!");
+        System.out.println("\nWelcome to Deli's DELI-cious Deli Sandwiches!");
 
         String homeMenuInput;
         Sandwich newSandwich = new Sandwich();
 
         do{
 
-            System.out.println("What would you like to do?");
-            System.out.println("(1) New Order");
+            System.out.println("\nWhat would you like to do?");
+            System.out.println("\n(1) New Order");
             System.out.println("(0) Exit");
             homeMenuInput = scanner.next().trim();
 
@@ -49,8 +49,8 @@ public class UserInterface {
         String newOrderMenuInput;
 
         do {
-            System.out.println("What would you like to do?");
-            System.out.println("(1) Add Sandwich");
+            System.out.println("\nWhat would you like to do?");
+            System.out.println("\n(1) Add Sandwich");
             System.out.println("(2) Add Drink");
             System.out.println("(3) Add Chips");
             System.out.println("(4) Add Sides");
@@ -97,8 +97,8 @@ public class UserInterface {
         Drink drink = new Drink();
         String drinkFlavorInput;
 
-        System.out.println("Please enter in one of the following flavors for your drink:");
-        System.out.println("~ Sproot\n~ Fonta\n~ Creampops \n~ Snapple\n~ SweeTea");
+        System.out.println("\nPlease enter in one of the following flavors for your drink:");
+        System.out.println("\n~ Sproot\n~ Fonta\n~ Creampops \n~ Snapple\n~ SweeTea");
 
 
         while (true) {
@@ -111,8 +111,8 @@ public class UserInterface {
             }
         }
 
-        System.out.println("Please select the size of the drink you would like:");
-        System.out.println("(1) Small \n(2) Medium \n(3) Large");
+        System.out.println("\nPlease select the size of the drink you would like:");
+        System.out.println("\n(1) Small \n(2) Medium \n(3) Large");
         String drinkSizeInput;
 
             drinkSizeInput = scanner.next().trim();
@@ -137,6 +137,7 @@ public class UserInterface {
                     System.out.println("Error, please select a size");
 
             }
+        System.out.println("\nDrink successfully added to Order!\n");
             newOrder.addDrink(drink);
 
     }
@@ -144,8 +145,8 @@ public class UserInterface {
     public static void handleAddChips() {
 
         Chip chip = new Chip();
-        System.out.println("Please select the chips that you want:");
-        System.out.println("(1) Cheetos\n(2) Funyons\n(3) Vickies\n(4) Rivers\n(5) Northies \n(0) Return to Order");
+        System.out.println("\nPlease select the chips that you would like:");
+        System.out.println("\n(1) Cheetos\n(2) Funyons\n(3) Vickies\n(4) Rivers\n(5) Northies \n(0) Return to Order");
         String chipsInput;
 
             chipsInput = scanner.next().trim();
@@ -178,6 +179,7 @@ public class UserInterface {
                 default:
                     System.out.println("Error, please select one of the listed options");
             }
+            System.out.println("\nChips successfully added to Order!\n");
             chip.setPrice(1.5);
             newOrder.addChip(chip);
 
@@ -186,23 +188,24 @@ public class UserInterface {
     public static void handleAddSides() {
 
         Sides sides = new Sides();
-        System.out.println("Would you like any sides? Below are the options:");
-        System.out.println("(1) Au Jus (2) Sauce (0) Return to Order");
+        System.out.println("\nPlease select the sides you would like:");
+        System.out.println("\n(1) Au Jus (2) Sauce (0) Return to Order");
 
         String sidesInput;
 
             sidesInput = scanner.next().trim();
             switch (sidesInput) {
                 case "1":
-                    sides.setName("au jus");
+                    sides.setName("Au Jus");
                     break;
                 case "2":
-                    sides.setName("sauce");
+                    sides.setName("Sauce");
                     break;
                 case "0":
                     System.out.println("Returning...");
                     break;
             }
+        System.out.println("\nSides successfully added to Order!\n");
 
     }
 
