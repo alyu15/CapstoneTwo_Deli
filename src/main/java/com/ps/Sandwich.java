@@ -1,36 +1,29 @@
 package com.ps;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
-
-public abstract class Sandwich extends Product{
+public class Sandwich extends Product{
 
     private String breadSize;
     private String breadType;
-    private String[] premiumToppings;
+    private String premiumToppings;
     private boolean extraMeat = false;
-    private String[] cheese;
+    private String cheese;
     private boolean extraCheese = false;
-    private String[] regularToppings;
-    private String[] sauces;
+    private ArrayList<String> regularToppings;
+    private ArrayList<String> sauces;
     private boolean isToasted = false;
 
-    public Sandwich(String breadSize, String breadType, String[] premiumToppings,
-                    String[] cheese, String[] regularToppings, String[] sauces) {
+    public Sandwich(){};
 
+    public Sandwich(String breadSize, String breadType, String premiumToppings,
+                    String cheese, ArrayList<String> regularToppings, ArrayList<String> sauces) {
         this.breadSize = breadSize;
         this.breadType = breadType;
-        this.premiumToppings = new String[] {"steak", "ham", "salami", "roast beef", "chicken", "bacon"};
-        this.cheese = new String[] {"american", "provolone", "cheddar", "swiss"};
-        this.regularToppings = new String[] {"lettuce", "peppers", "onions", "tomatoes", "jalepenos", "cucumbers", "pickles", "guacamole", "mushrooms"};
-        this.sauces = new String[] {"mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette"};
-    }
-
-
-
-    @Override
-    public double calculatePrice() {
-        return 0;
+        this.premiumToppings = premiumToppings;
+        this.cheese = cheese;
+        this.regularToppings = regularToppings;
+        this.sauces = sauces;
     }
 
     public String getBreadSize() {
@@ -49,13 +42,14 @@ public abstract class Sandwich extends Product{
         this.breadType = breadType;
     }
 
-    public String[] getPremiumToppings() {
+    public String getPremiumToppings() {
         return premiumToppings;
     }
 
-    public void setPremiumToppings(String[] premiumToppings) {
+    public void setPremiumToppings(String premiumToppings) {
         this.premiumToppings = premiumToppings;
     }
+
 
     public boolean isExtraMeat() {
         return extraMeat;
@@ -65,11 +59,11 @@ public abstract class Sandwich extends Product{
         this.extraMeat = extraMeat;
     }
 
-    public String[] getCheese() {
+    public String getCheese() {
         return cheese;
     }
 
-    public void setCheese(String[] cheese) {
+    public void setCheese(String cheese) {
         this.cheese = cheese;
     }
 
@@ -81,19 +75,19 @@ public abstract class Sandwich extends Product{
         this.extraCheese = extraCheese;
     }
 
-    public String[] getRegularToppings() {
+    public ArrayList<String> getRegularToppings() {
         return regularToppings;
     }
 
-    public void setRegularToppings(String[] regularToppings) {
+    public void setRegularToppings(ArrayList<String> regularToppings) {
         this.regularToppings = regularToppings;
     }
 
-    public String[] getSauces() {
+    public ArrayList<String> getSauces() {
         return sauces;
     }
 
-    public void setSauces(String[] sauces) {
+    public void setSauces(ArrayList<String> sauces) {
         this.sauces = sauces;
     }
 
@@ -106,16 +100,63 @@ public abstract class Sandwich extends Product{
     }
 
     @Override
+    public double calculatePrice() {
+        double totalPrice = 0;
+        double premiumToppingCharge = 0;
+        double extraMeatCharge = 0;
+        double cheeseCharge = 0;
+        double extraCheeseCharge = 0;
+        if (getBreadSize() != null) {
+            switch (getBreadSize()) {
+                case "4\"":
+                    totalPrice += 5.50;
+                    premiumToppingCharge = 1.00;
+                    extraMeatCharge = 0.50;
+                    cheeseCharge = 0.75;
+                    extraCheeseCharge = 0.30;
+                    break;
+                case "8\"":
+                    totalPrice += 7.00;
+                    premiumToppingCharge = 2.00;
+                    extraMeatCharge = 1.00;
+                    cheeseCharge = 1.50;
+                    extraCheeseCharge = 0.60;
+                    break;
+                case "12\"":
+                    totalPrice += 8.50;
+                    premiumToppingCharge = 3.00;
+                    extraMeatCharge = 1.50;
+                    cheeseCharge = 2.25;
+                    extraCheeseCharge = 0.90;
+                    break;
+            }
+        }
+        if (this.premiumToppings != null) {
+            totalPrice += premiumToppingCharge;
+        }
+        if (this.cheese != null) {
+            totalPrice += cheeseCharge;
+        }
+        if (extraMeat) {
+            totalPrice += extraMeatCharge;
+        }
+        if (extraCheese) {
+            totalPrice += extraCheeseCharge;
+        }
+        return totalPrice;
+    }
+
+    @Override
     public String toString() {
         return "Sandwich{" +
                 "breadSize='" + breadSize + '\'' +
-                ", breadType=" + breadType +
-                ", premiumToppings=" + Arrays.toString(premiumToppings) +
+                ", breadType='" + breadType + '\'' +
+                ", premiumToppings=" + premiumToppings +
                 ", extraMeat=" + extraMeat +
-                ", cheese=" + Arrays.toString(cheese) +
+                ", cheese='" + cheese + '\'' +
                 ", extraCheese=" + extraCheese +
-                ", regularToppings=" + Arrays.toString(regularToppings) +
-                ", sauces=" + Arrays.toString(sauces) +
+                ", regularToppings=" + regularToppings +
+                ", sauces=" + sauces +
                 ", isToasted=" + isToasted +
                 '}';
     }

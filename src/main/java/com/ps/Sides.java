@@ -1,27 +1,31 @@
 package com.ps;
 
-import java.util.Arrays;
+public class Sides extends Product{
 
-public abstract class Sides extends Product{
-
-    private String[] name;
+    private String name;
+    public Sides () {};
 
     public Sides(String name) {
-        this.name = new String[] {"au jus", "sauce"};
+        this.name = name;
     }
 
-    public String[] getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(String[] name) {
+    public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public double calculatePrice() {
+        return 0;
     }
 
     @Override
     public String toString() {
         return "Sides{" +
-                "name=" + Arrays.toString(name) +
+                "name='" + name + '\'' +
                 '}';
     }
 }

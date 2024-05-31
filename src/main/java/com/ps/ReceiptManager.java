@@ -1,17 +1,23 @@
 package com.ps;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ReceiptManager {
 
-    public static void saveReceipt(String receipt) {
+    public static void saveReceipt(Order order) {
 
         try {
+            LocalDateTime localDateTime = LocalDateTime.now();
+            DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
+            String formattedDateTime = localDateTime.format(dateTimeFormatter);
+            String receiptFile = formattedDateTime + ".txt";
 
-            DateTimeFormatter dateTimeFormatted = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
-            BufferedWriter buffwriter = new BufferedWriter(new FileWriter("src/main/Receipts/" + dateTimeFormatted + ".txt"));
-            buffwriter.write(receipt);
+            BufferedWriter buffwriter = new BufferedWriter(new FileWriter("src/main/Receipts/" + receiptFile));
+
+            buffwriter.write(order.toString());
+            buffwriter.close();
 
         } catch (IOException e) {
             e.printStackTrace();

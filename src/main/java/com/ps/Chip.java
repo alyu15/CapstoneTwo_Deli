@@ -1,16 +1,21 @@
 package com.ps;
 
-public abstract class Chip extends Product {
+public class Chip extends Product {
 
     private String brandName;
 
+    public Chip () {};
     public Chip(String brandName) {
         this.brandName = brandName;
     }
 
     @Override
     public double calculatePrice() {
-        return 1.5f;
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getBrandName() {
@@ -20,6 +25,7 @@ public abstract class Chip extends Product {
     public void setBrandName(String brandName) {
         this.brandName = brandName;
     }
+
 
     @Override
     public String toString() {

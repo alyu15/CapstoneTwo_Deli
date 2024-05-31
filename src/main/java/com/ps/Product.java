@@ -2,7 +2,7 @@ package com.ps;
 
 public abstract class Product {
 
-    private double price;
+    protected double price;
 
     public abstract double calculatePrice();
 

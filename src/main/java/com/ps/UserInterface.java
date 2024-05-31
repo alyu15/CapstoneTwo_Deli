@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class UserInterface {
     static Scanner scanner = new Scanner(System.in);
 
-    private static Order newOrder;
+    protected static Order newOrder;
 
-    private static void init(){
+    protected static void init(){
         newOrder = new Order();
     }
     public static void display() {
 
-        System.out.println("Hello, welcome to Deli's Delicious Deli Sandwiches!"); // need to modify
+        System.out.println("Hello, welcome to Deli's Delicious Deli Sandwiches!");
 
         String homeMenuInput;
+        Sandwich newSandwich = new Sandwich();
 
         do{
 
@@ -25,7 +26,7 @@ public class UserInterface {
 
             switch(homeMenuInput){
                 case "1":
-                    handleNewOrder();
+                    handleNewOrder(newSandwich);
                     break;
 
                 case "0":
@@ -40,26 +41,26 @@ public class UserInterface {
         }while(!homeMenuInput.equals("0"));
     }
 
-    public static void handleNewOrder() {
+    public static void handleNewOrder(Sandwich newSandwich) {
 
         init();
 
         String newOrderMenuInput;
 
         do {
-
             System.out.println("What would you like to do?");
             System.out.println("(1) Add Sandwich");
             System.out.println("(2) Add Drink");
             System.out.println("(3) Add Chips");
-            System.out.println("(4) Checkout");
+            System.out.println("(4) Add Sides");
+            System.out.println("(5) Checkout");
             System.out.println("(0) Cancel Order");
 
             newOrderMenuInput = scanner.next().trim();
 
             switch(newOrderMenuInput) {
                 case "1":
-                    CreateSandwich.handleNewSandwich();
+                    CreateSandwich.handleNewSandwich(newSandwich);
                     break;
 
                 case "2":
@@ -71,12 +72,16 @@ public class UserInterface {
                     break;
 
                 case "4":
-                    handleCheckout();
+                    handleAddSides();
                     break;
+
+                case "5":
+                    handleCheckout(newSandwich);
+                    return;
 
                 case "0":
                     handleCancelOrder();
-                    break;
+                    return;
 
                 default:
                     System.out.println("Error, try again");
@@ -88,6 +93,7 @@ public class UserInterface {
 
     public static void handleAddDrink() {
 
+        Drink drink = new Drink();
         String drinkFlavorInput;
 
         System.out.println("Please enter in one of the following flavors for your drink:");
@@ -99,6 +105,7 @@ public class UserInterface {
             if (drinkFlavorInput.isEmpty()) {
                 System.out.println("* Please enter in a listed flavor.");
             } else {
+                drink.setFlavor(drinkFlavorInput);
                 break;
             }
         }
@@ -106,54 +113,61 @@ public class UserInterface {
         System.out.println("Please select the size of the drink you would like:");
         System.out.println("(1) Small \n(2) Medium \n(3) Large");
         String drinkSizeInput;
-        boolean running = true;
 
-        while (running) {
             drinkSizeInput = scanner.next().trim();
 
             switch (drinkSizeInput) {
                 case "1":
-
+                    drink.setSize("small");
+                    drink.setPrice(2.0);
                     break;
 
                 case "2":
+                    drink.setSize("medium");
+                    drink.setPrice(2.5);
                     break;
 
                 case "3":
+                    drink.setSize("large");
+                    drink.setPrice(3.0);
                     break;
 
                 default:
                     System.out.println("Error, please select a size");
-                    continue;
-            }
-            running = false;
 
-        }
+            }
+            newOrder.addDrink(drink);
+
     }
 
     public static void handleAddChips() {
-        // (3) Add Chips
-        // Select chip type
+
+        Chip chip = new Chip();
         System.out.println("Please select the chips that you want:");
         System.out.println("(1) Cheetos\n(2) Funyons\n(3) Vickies\n(4) Rivers\n(5) Northies \n(0) Return to Order");
         String chipsInput;
 
-        do {
             chipsInput = scanner.next().trim();
+
             switch(chipsInput) {
                 case "1":
+                    chip.setBrandName("Cheetos");
                     break;
 
                 case "2":
+                    chip.setBrandName("Funyons");
                     break;
 
                 case "3":
+                    chip.setBrandName("Vickies");
                     break;
 
                 case "4":
+                    chip.setBrandName("Rivers");
                     break;
 
                 case "5":
+                    chip.setBrandName("Northies");
                     break;
 
                 case "0":
@@ -162,21 +176,49 @@ public class UserInterface {
 
                 default:
                     System.out.println("Error, please select one of the listed options");
-                    break;
             }
-        } while(!chipsInput.equals("0"));
+            chip.setPrice(1.5);
+            newOrder.addChip(chip);
+
     }
 
+    public static void handleAddSides() {
 
-    public static void handleCheckout() {
-        // (4) Checkout - displays the order details and the price
-        // Confirm
-        // Creates the receipt file and goes back to home screen
+        Sides sides = new Sides();
+        System.out.println("Would you like any sides? Below are the options:");
+        System.out.println("(1) Au Jus (2) Sauce (0) Return to Order");
+
+        String sidesInput;
+
+            sidesInput = scanner.next().trim();
+            switch (sidesInput) {
+                case "1":
+                    sides.setName("au jus");
+                    break;
+                case "2":
+                    sides.setName("sauce");
+                    break;
+                case "0":
+                    System.out.println("Returning...");
+                    break;
+            }
+
+    }
+
+    public static void handleCheckout(Sandwich newSandwich) {
+
+        newOrder.addSandwich(newSandwich);
+
+        System.out.println(newOrder);
+        System.out.println(newOrder.getPrice());
+
+        ReceiptManager.saveReceipt(newOrder);
+
     }
 
     public static void handleCancelOrder() {
-        // (0) Cancel Order
-        // Deletes the order and go back to the home screen
+        newOrder = new Order();
+
     }
 
 }

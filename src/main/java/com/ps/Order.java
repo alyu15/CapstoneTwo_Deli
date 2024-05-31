@@ -9,6 +9,7 @@ public class Order {
     private List<Drink> drinks;
     private List<Chip> chips;
     private List<Sides> sides;
+    private double price;
 
     public Order() {
         this.sandwiches = new ArrayList<>();
@@ -33,7 +34,33 @@ public class Order {
         this.sides.add(side);
     }
 
-    public void checkOut() {
+    public double getPrice () {
+        double orderTotal = 0;
+        if(!this.sandwiches.isEmpty()) {
+            for (Sandwich newSandwich: this.sandwiches) {
+                orderTotal += newSandwich.calculatePrice();
+            }
+        }
+        if(!this.drinks.isEmpty()) {
+            for (Drink drink: this.drinks) {
+                orderTotal += drink.calculatePrice();
+            }
+        }
+        if(!this.chips.isEmpty()) {
+            for(Chip chip: this.chips) {
+                orderTotal += chip.calculatePrice();
+            }
+        }
+        return orderTotal;
+    }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "sandwiches=" + sandwiches +
+                ", drinks=" + drinks +
+                ", chips=" + chips +
+                ", sides=" + sides +
+                '}';
     }
 }

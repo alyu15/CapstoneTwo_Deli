@@ -1,9 +1,12 @@
 package com.ps;
 
-public abstract class Drink extends Product{
+public class Drink extends Product{
 
     private String flavor;
     private String size;
+
+    public Drink() {
+    };
 
     public Drink(String flavor, String size) {
         this.flavor = flavor;
@@ -12,13 +15,11 @@ public abstract class Drink extends Product{
 
     @Override
     public double calculatePrice() {
+        return price;
+    }
 
-        if(this.size.equalsIgnoreCase("small")) {
-            return 2.0f;
-        } else if(this.size.equalsIgnoreCase("medium")) {
-            return 2.5f;
-        } else { return 3.0f;
-        }
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getFlavor() {
