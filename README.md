@@ -10,7 +10,7 @@ The user of this application will be able to utilize its functions in order to a
 ><details>
 ><summary> Home Screen </summary>
 >
-> IMAGE HERE
+> ![HomeScreen](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/HomeScreen.PNG)
 ></details>
 
 ## New Order Screen
@@ -27,7 +27,7 @@ The user of this application will be able to utilize its functions in order to a
 ><details>
 ><summary> Creating a New Order </summary>
 >
->IMAGE HERE
+>![NewOrder](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/NewOrderScreen.PNG)
 ></details>
 
 ## Add Sandwich Screen
@@ -47,7 +47,7 @@ Afterwards, the user is given a confirmation message ensuring that their sandwic
 ><details>
 ><summary> Creating a Sandwich Screen </summary>
 >
->IMAGE HERE
+>![SandwichScreen](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/SandwichScreen.PNG)
 ></details>
 
 
@@ -62,7 +62,7 @@ Afterwards, the user is given a confirmation message ensuring that their drink w
 ><details>
 ><summary> Adding a Drink Screen </summary>
 >
->IMAGE HERE
+>![DrinkScreen](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/DrinkScreen.PNG)
 ></details>
 
 ## Add Chips Screen
@@ -74,7 +74,7 @@ Afterwards, the user is displayed a confirmation message that their selected chi
 ><details>
 ><summary> Adding Chips Screen </summary>
 >
->IMAGE HERE
+>![ChipsScreen](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/ChipsScreen.PNG)
 ></details>
 
 ## Add Sides Screen
@@ -86,7 +86,7 @@ Afterwards, they will be shown a confirmation message ensuring that their sides 
 ><details>
 ><summary> Adding Sides Screen </summary>
 >
->IMAGE HERE
+>![SidesScreen](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/SidesScreen.PNG)
 ></details>
 
 ## Approach
@@ -94,13 +94,13 @@ Afterwards, they will be shown a confirmation message ensuring that their sides 
 ><details>
 ><summary> Initial Diagram </summary>
 >
->IMAGE HERE
+>![OrigDiagram](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/OrigDiagram.PNG)
 ></details>
 
 ><details>
 ><summary> Modified Diagram </summary>
 >
->IMAGE HERE
+>![NewDiagram](https://github.com/alyu15/CapstoneTwo_Deli/blob/3fd37416b884ff9e8553ad2834f7a82a421c6775/Images/NewDiagram.PNG)
 ></details>
 
 ## Interesting Piece of Code
@@ -133,4 +133,12 @@ StringBuilder builder = new StringBuilder();
 I found this piece of code interesting because I had always just auto-generated the properties of a class and left them as that.
 Instead, I would normally println after each bit of code but I found that by using these methods, I'm able to save some time and not
 have to manually try and make things look pretty each and every time I go to println.
+
+<br>
+<div align="center">
+<b>Thank you for taking the time out to check out my application!</b>
+
+![Closing](https://github.com/alyu15/WorkshopFive_CarDealershipPart2/blob/7f801e60c66e603f04c420eab3f73f97b2115b9f/Images/Closing.PNG)  
+</div>
+
 
