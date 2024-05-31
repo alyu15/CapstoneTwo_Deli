@@ -28,10 +28,10 @@ public class ReceiptManager {
                     String extraCheeseChoice = sandwichOrder.isExtraCheese() ? "Yes" : "No";
                     String toastedChoice = sandwichOrder.isToasted() ? "Yes" : "No";
 
-                    String sandwichFormat = String.format("\nSandwich Bread Type: %s\nSandwich Size: %s\nPremium Toppings: %s\nExtra Meat: %s\n" +
+                    String sandwichFormat = String.format("\nSandwich Size: %s\nSandwich Bread Type: %s\nPremium Toppings: %s\nExtra Meat: %s\n" +
                                     "Sandwich Cheese: %s\nExtra Cheese: %s\nRegular Toppings: %s\nSauces: %s, Toasted: %s",
-                            sandwichOrder.getBreadType(),
                             sandwichOrder.getBreadSize(),
+                            sandwichOrder.getBreadType(),
                             sandwichOrder.getPremiumToppings(),
                             extraMeatChoice,
                             sandwichOrder.getCheese(),

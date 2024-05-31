@@ -15,8 +15,8 @@ public class CreateSandwich {
             System.out.println(newSandwich);
 
             System.out.println("Please select one of the following options:");
-            System.out.println("(1) Select type of bread");
-            System.out.println("(2) Select size of bread");
+            System.out.println("(1) Select size of bread");
+            System.out.println("(2) Select type of bread");
             System.out.println("(3) Select Toppings (Regular)");
             System.out.println("(4) Select Meat Toppings (Premium) - Additional cost");
             System.out.println("(5) Select Cheese");
@@ -28,11 +28,11 @@ public class CreateSandwich {
 
             switch(newSandwichInput){
                 case "1":
-                    handleSandwichType(newSandwich);
+                    handleSandwichSize(newSandwich);
                     break;
 
                 case "2":
-                    handleSandwichSize(newSandwich);
+                    handleSandwichType(newSandwich);
                     break;
 
                 case "3":
@@ -67,6 +67,36 @@ public class CreateSandwich {
             }
 
         } while(!newSandwichInput.equals("0") && !newSandwichInput.equals("-1"));
+    }
+
+    public static void handleSandwichSize(Sandwich newSandwich) {
+
+        System.out.println("Please select what size of sandwich you would like:");
+        System.out.println("(1) 4\"\n(2) 8\"\n(3) 12\"");
+        String sandwichSizeInput;
+        boolean running = true;
+        while(running){
+            sandwichSizeInput = scanner.next().trim();
+
+            switch(sandwichSizeInput) {
+                case "1":
+                    newSandwich.setBreadSize("4\"");
+                    break;
+
+                case "2":
+                    newSandwich.setBreadSize("8\"");
+                    break;
+
+                case "3":
+                    newSandwich.setBreadSize("12\"");
+                    break;
+
+                default:
+                    System.out.println("Error, please choose one of the available sizes");
+                    continue;
+            }
+            running = false;
+        }
     }
 
     public static void handleSandwichType(Sandwich newSandwich){
@@ -106,35 +136,6 @@ public class CreateSandwich {
         }
     }
 
-    public static void handleSandwichSize(Sandwich newSandwich) {
-
-        System.out.println("Please select what size of sandwich you would like:");
-        System.out.println("(1) 4\"\n(2) 8\"\n(3) 12\"");
-        String sandwichSizeInput;
-        boolean running = true;
-        while(running){
-            sandwichSizeInput = scanner.next().trim();
-
-            switch(sandwichSizeInput) {
-                case "1":
-                    newSandwich.setBreadSize("4\"");
-                    break;
-
-                case "2":
-                    newSandwich.setBreadSize("8\"");
-                    break;
-
-                case "3":
-                    newSandwich.setBreadSize("12\"");
-                    break;
-
-                default:
-                    System.out.println("Error, please choose one of the available sizes");
-                    continue;
-            }
-            running = false;
-        }
-    }
 
     public static void handleRegularToppings(Sandwich newSandwich) {
         System.out.println("Regular Toppings:");

@@ -89,11 +89,28 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "sandwiches=" + sandwiches +
-                ", drinks=" + drinks +
-                ", chips=" + chips +
-                ", sides=" + sides +
-                '}';
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("\nOrder")
+                .append("\n==========================================\n")
+                .append("==========================================\n")
+                .append(connect(sandwiches))
+                .append("==========================================\n")
+                .append(connect(drinks))
+                .append("==========================================\n")
+                .append(connect(chips))
+                .append("==========================================\n")
+                .append(connect(sides));
+
+        return builder.toString();
+    }
+
+    private String connect(List<?> list) {
+        StringBuilder listBuilder = new StringBuilder();
+        for (Object item : list) {
+            listBuilder.append(item).append("\n");
+        }
+        return listBuilder.toString();
     }
 }
+

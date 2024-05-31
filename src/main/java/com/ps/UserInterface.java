@@ -13,7 +13,7 @@ public class UserInterface {
     }
     public static void display() {
 
-        System.out.println("Hello, welcome to Deli's Delicious Deli Sandwiches!");
+        System.out.println("Welcome to Deli's Delicious Deli Sandwiches!");
 
         String homeMenuInput;
         Sandwich newSandwich = new Sandwich();
@@ -211,7 +211,7 @@ public class UserInterface {
         newOrder.addSandwich(newSandwich);
 
         System.out.println(newOrder);
-        System.out.println(newOrder.getPrice());
+        System.out.printf("Total Price: $%.2f\n",newOrder.getPrice());
 
         ReceiptManager.saveReceipt(newOrder);
 

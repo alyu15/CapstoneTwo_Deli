@@ -1,0 +1,17 @@
+Date: 05-31-2024 12:42:13
+
+Sandwich Size: 4"
+Sandwich Bread Type: White
+Premium Toppings: Salami
+Extra Meat: No
+Sandwich Cheese: Swiss
+Extra Cheese: Yes
+Regular Toppings: [lettuce]
+Sauces: [Thousand, Island], Toasted: Yes
+
+Drink Flavor: Fonta
+Drink Size: Large
+
+Chips: Rivers
+
+Total Price: $12.05
